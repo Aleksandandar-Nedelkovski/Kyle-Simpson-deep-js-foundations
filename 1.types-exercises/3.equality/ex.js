@@ -11,14 +11,14 @@ function setsMatch(arr1, arr2) {
 findAll = (match, arr) => {
   var ret = [];
   for (let v of arr) {
-    if (Object.is(match,v)) {
+    if (Object.is(match, v)) {
       ret.push(v);
     }
     else if (match == null && v == null) {
       ret.push(v);
     }
     else if (typeof match == "boolean" &&
-    typeof v == "boolean") {
+      typeof v == "boolean") {
       if (match == v) {
         ret.push(v);
       }
@@ -26,10 +26,10 @@ findAll = (match, arr) => {
     else if (typeof match == "string" &&
       match.trim() != "" &&
       typeof v == "number" &&
-      !Object.is (v, -0)
+      !Object.is(v, -0)
     ) {
       if (match == v) {
-      ret.push(v);
+        ret.push(v);
       }
     }
     else if (typeof match == "number" &&
