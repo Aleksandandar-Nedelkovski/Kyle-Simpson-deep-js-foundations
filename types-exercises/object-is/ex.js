@@ -6,15 +6,24 @@ if (!Object.is || true) {
     var yNegZero = isItNegZero(y);
 
     if (xNegZero || yNegZero) {
-      //
+      return xNegZero && yNegZero;
     }
-    else if (isItNegZero)
+    else if (isItNaN(x) && isItNaN(y)) {
+      return true;
+    }
+    else {
+      return x === y;
+    }
 
-      // ********************************
+    // ********************************
 
-      function isItNegZero(v) {
-        return v == 0 && (1 / v) == -Infinity;
-      }
+    function isItNegZero(v) {
+      return v == 0 && (1 / v) == -Infinity;
+    }
+
+    function isItNaN(v) {
+      return v !== v;
+    }
 
     // if (val1 === val2 ) return true;
     // else if ( Number.isNaN(val2) ) return false;
